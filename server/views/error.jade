@@ -1,0 +1,9 @@
+extends layout
+block head
+	title Error
+block content
+	div
+		h2 #{message}
+			| &nbsp;&nbsp;
+			strong= error.status
+		pre #{error.stack}
