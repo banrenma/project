@@ -1,0 +1,185 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'node', '/usr/local/bin/npm', 'install', 'fontawegit', 'status' ]
+2 info using npm@2.11.3
+3 info using node@v0.12.7
+4 verbose install initial load of /Users/nieming/Documents/web/project/project/package.json
+5 verbose installManyTop reading scoped package data from /Users/nieming/Documents/web/project/project/node_modules/babel/package.json
+6 verbose installManyTop reading scoped package data from /Users/nieming/Documents/web/project/project/node_modules/babel-core/package.json
+7 verbose installManyTop reading scoped package data from /Users/nieming/Documents/web/project/project/node_modules/babel-loader/package.json
+8 verbose installManyTop reading scoped package data from /Users/nieming/Documents/web/project/project/node_modules/body-parser/package.json
+9 verbose installManyTop reading scoped package data from /Users/nieming/Documents/web/project/project/node_modules/bootstrap/package.json
+10 verbose installManyTop reading scoped package data from /Users/nieming/Documents/web/project/project/node_modules/classnames/package.json
+11 verbose installManyTop reading scoped package data from /Users/nieming/Documents/web/project/project/node_modules/connect-mongo/package.json
+12 verbose installManyTop reading scoped package data from /Users/nieming/Documents/web/project/project/node_modules/cookie-parser/package.json
+13 verbose installManyTop reading scoped package data from /Users/nieming/Documents/web/project/project/node_modules/debug/package.json
+14 verbose installManyTop reading scoped package data from /Users/nieming/Documents/web/project/project/node_modules/express/package.json
+15 verbose installManyTop reading scoped package data from /Users/nieming/Documents/web/project/project/node_modules/express-mongodb/package.json
+16 verbose installManyTop reading scoped package data from /Users/nieming/Documents/web/project/project/node_modules/express-session/package.json
+17 verbose installManyTop reading scoped package data from /Users/nieming/Documents/web/project/project/node_modules/gulp/package.json
+18 verbose installManyTop reading scoped package data from /Users/nieming/Documents/web/project/project/node_modules/gulp-less/package.json
+19 verbose installManyTop reading scoped package data from /Users/nieming/Documents/web/project/project/node_modules/gulp-minify-css/package.json
+20 verbose installManyTop reading scoped package data from /Users/nieming/Documents/web/project/project/node_modules/gulp-uglify/package.json
+21 verbose installManyTop reading scoped package data from /Users/nieming/Documents/web/project/project/node_modules/gulp-webpack/package.json
+22 verbose installManyTop reading scoped package data from /Users/nieming/Documents/web/project/project/node_modules/history/package.json
+23 verbose installManyTop reading scoped package data from /Users/nieming/Documents/web/project/project/node_modules/install/package.json
+24 verbose installManyTop reading scoped package data from /Users/nieming/Documents/web/project/project/node_modules/jade/package.json
+25 verbose installManyTop reading scoped package data from /Users/nieming/Documents/web/project/project/node_modules/jquery/package.json
+26 verbose installManyTop reading scoped package data from /Users/nieming/Documents/web/project/project/node_modules/mongoose/package.json
+27 verbose installManyTop reading scoped package data from /Users/nieming/Documents/web/project/project/node_modules/morgan/package.json
+28 verbose installManyTop reading scoped package data from /Users/nieming/Documents/web/project/project/node_modules/react/package.json
+29 verbose installManyTop reading scoped package data from /Users/nieming/Documents/web/project/project/node_modules/serve-favicon/package.json
+30 verbose installManyTop reading scoped package data from /Users/nieming/Documents/web/project/project/node_modules/underscore/package.json
+31 verbose installManyTop reading scoped package data from /Users/nieming/Documents/web/project/project/node_modules/webpack/package.json
+32 info package.json babel-core@5.8.23 No README data
+33 info package.json install@0.1.8 No license field.
+34 info package.json connect-mongo@0.8.2 No license field.
+35 info package.json express-mongodb@0.0.4 No license field.
+36 info package.json jquery@2.1.4 No license field.
+37 verbose readDependencies loading dependencies from /Users/nieming/Documents/web/project/project/package.json
+38 silly cache add args [ 'fontawegit', null ]
+39 verbose cache add spec fontawegit
+40 silly cache add args [ 'status', null ]
+41 verbose cache add spec status
+42 silly cache add parsed spec { raw: 'fontawegit',
+42 silly cache add   scope: null,
+42 silly cache add   name: 'fontawegit',
+42 silly cache add   rawSpec: '',
+42 silly cache add   spec: '*',
+42 silly cache add   type: 'range' }
+43 silly addNamed fontawegit@*
+44 verbose addNamed "*" is a valid semver range for fontawegit
+45 silly addNameRange { name: 'fontawegit', range: '*', hasData: false }
+46 silly mapToRegistry name fontawegit
+47 silly mapToRegistry using default registry
+48 silly mapToRegistry registry https://registry.npmjs.org/
+49 silly mapToRegistry uri https://registry.npmjs.org/fontawegit
+50 verbose addNameRange registry:https://registry.npmjs.org/fontawegit not in flight; fetching
+51 silly cache add parsed spec { raw: 'status',
+51 silly cache add   scope: null,
+51 silly cache add   name: 'status',
+51 silly cache add   rawSpec: '',
+51 silly cache add   spec: '*',
+51 silly cache add   type: 'range' }
+52 silly addNamed status@*
+53 verbose addNamed "*" is a valid semver range for status
+54 silly addNameRange { name: 'status', range: '*', hasData: false }
+55 silly mapToRegistry name status
+56 silly mapToRegistry using default registry
+57 silly mapToRegistry registry https://registry.npmjs.org/
+58 silly mapToRegistry uri https://registry.npmjs.org/status
+59 verbose addNameRange registry:https://registry.npmjs.org/status not in flight; fetching
+60 verbose request uri https://registry.npmjs.org/fontawegit
+61 verbose request no auth needed
+62 info attempt registry request try #1 at 19:17:20
+63 verbose request id ad39cf1a25709dc0
+64 http request GET https://registry.npmjs.org/fontawegit
+65 verbose request uri https://registry.npmjs.org/status
+66 verbose request no auth needed
+67 info attempt registry request try #1 at 19:17:20
+68 http request GET https://registry.npmjs.org/status
+69 http 404 https://registry.npmjs.org/fontawegit
+70 verbose headers { 'content-type': 'application/json',
+70 verbose headers   'cache-control': 'max-age=0',
+70 verbose headers   'content-length': '2',
+70 verbose headers   'accept-ranges': 'bytes',
+70 verbose headers   date: 'Wed, 23 Sep 2015 11:17:20 GMT',
+70 verbose headers   via: '1.1 varnish',
+70 verbose headers   age: '0',
+70 verbose headers   connection: 'keep-alive',
+70 verbose headers   'x-served-by': 'cache-nrt6125-NRT',
+70 verbose headers   'x-cache': 'MISS',
+70 verbose headers   'x-cache-hits': '0',
+70 verbose headers   'x-timer': 'S1443007040.795723,VS0,VE129' }
+71 silly get cb [ 404,
+71 silly get   { 'content-type': 'application/json',
+71 silly get     'cache-control': 'max-age=0',
+71 silly get     'content-length': '2',
+71 silly get     'accept-ranges': 'bytes',
+71 silly get     date: 'Wed, 23 Sep 2015 11:17:20 GMT',
+71 silly get     via: '1.1 varnish',
+71 silly get     age: '0',
+71 silly get     connection: 'keep-alive',
+71 silly get     'x-served-by': 'cache-nrt6125-NRT',
+71 silly get     'x-cache': 'MISS',
+71 silly get     'x-cache-hits': '0',
+71 silly get     'x-timer': 'S1443007040.795723,VS0,VE129' } ]
+72 http 200 https://registry.npmjs.org/status
+73 silly get cb [ 200,
+73 silly get   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+73 silly get     etag: '"4T2430BSZ6P9VXOB3VS7O823G"',
+73 silly get     'content-type': 'application/json',
+73 silly get     'cache-control': 'max-age=60',
+73 silly get     'content-length': '22522',
+73 silly get     'accept-ranges': 'bytes',
+73 silly get     date: 'Wed, 23 Sep 2015 11:17:21 GMT',
+73 silly get     via: '1.1 varnish',
+73 silly get     age: '0',
+73 silly get     connection: 'keep-alive',
+73 silly get     'x-served-by': 'cache-nrt6135-NRT',
+73 silly get     'x-cache': 'MISS',
+73 silly get     'x-cache-hits': '0',
+73 silly get     'x-timer': 'S1443007040.789054,VS0,VE590',
+73 silly get     vary: 'Accept' } ]
+74 verbose get saving status to /Users/nieming/.npm/registry.npmjs.org/status/.cache.json
+75 silly addNameRange number 2 { name: 'status', range: '*', hasData: true }
+76 silly addNameRange versions [ 'status',
+76 silly addNameRange   [ '0.0.1',
+76 silly addNameRange     '0.0.2',
+76 silly addNameRange     '0.0.3',
+76 silly addNameRange     '0.0.4',
+76 silly addNameRange     '0.0.5',
+76 silly addNameRange     '0.0.6',
+76 silly addNameRange     '0.0.7',
+76 silly addNameRange     '0.0.8',
+76 silly addNameRange     '0.0.9',
+76 silly addNameRange     '0.0.10',
+76 silly addNameRange     '0.0.11',
+76 silly addNameRange     '0.0.12',
+76 silly addNameRange     '0.0.13' ] ]
+77 silly addNamed status@0.0.13
+78 verbose addNamed "0.0.13" is a plain semver version for status
+79 silly mapToRegistry name status
+80 silly mapToRegistry using default registry
+81 silly mapToRegistry registry https://registry.npmjs.org/
+82 silly mapToRegistry uri https://registry.npmjs.org/status
+83 verbose addRemoteTarball https://registry.npmjs.org/status/-/status-0.0.13.tgz not in flight; adding
+84 verbose addRemoteTarball [ 'https://registry.npmjs.org/status/-/status-0.0.13.tgz',
+84 verbose addRemoteTarball   '7c89d26386ae5bb674c2bd39f228e5bb6af90cba' ]
+85 info retry fetch attempt 1 at 19:17:21
+86 info attempt registry request try #1 at 19:17:21
+87 http fetch GET https://registry.npmjs.org/status/-/status-0.0.13.tgz
+88 http fetch 200 https://registry.npmjs.org/status/-/status-0.0.13.tgz
+89 silly fetchAndShaCheck shasum 7c89d26386ae5bb674c2bd39f228e5bb6af90cba
+90 verbose addTmpTarball /var/folders/4f/mxpmgtd55fdb15f_9fy7bk1h0000gn/T/npm-6410-97253c4a/registry.npmjs.org/status/-/status-0.0.13.tgz not in flight; adding
+91 verbose addTmpTarball already have metadata; skipping unpack for status@0.0.13
+92 silly cache afterAdd status@0.0.13
+93 verbose afterAdd /Users/nieming/.npm/status/0.0.13/package/package.json not in flight; writing
+94 verbose afterAdd /Users/nieming/.npm/status/0.0.13/package/package.json written
+95 verbose stack Error: Registry returned 404 for GET on https://registry.npmjs.org/fontawegit
+95 verbose stack     at CachingRegistryClient.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:239:14)
+95 verbose stack     at Request._callback (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:170:14)
+95 verbose stack     at Request.self.callback (/usr/local/lib/node_modules/npm/node_modules/request/request.js:354:22)
+95 verbose stack     at Request.emit (events.js:110:17)
+95 verbose stack     at Request.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/request/request.js:1207:14)
+95 verbose stack     at Request.emit (events.js:129:20)
+95 verbose stack     at IncomingMessage.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/request/request.js:1153:12)
+95 verbose stack     at IncomingMessage.emit (events.js:129:20)
+95 verbose stack     at _stream_readable.js:908:16
+95 verbose stack     at process._tickCallback (node.js:355:11)
+96 verbose statusCode 404
+97 verbose pkgid fontawegit
+98 verbose cwd /Users/nieming/Documents/web/project/project
+99 error Darwin 14.1.0
+100 error argv "node" "/usr/local/bin/npm" "install" "fontawegit" "status"
+101 error node v0.12.7
+102 error npm  v2.11.3
+103 error code E404
+104 error 404 Registry returned 404 for GET on https://registry.npmjs.org/fontawegit
+104 error 404
+104 error 404 'fontawegit' is not in the npm registry.
+104 error 404 You should bug the author to publish it (or use the name yourself!)
+104 error 404 It was specified as a dependency of 'server'
+104 error 404
+104 error 404 Note that you can also install from a
+104 error 404 tarball, folder, http url, or git url.
+105 verbose exit [ 1, true ]

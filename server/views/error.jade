@@ -1,9 +1,10 @@
 extends layout
 block head
 	title Error
+	link(rel='stylesheet', href = '/third/bootstrap/css/bootstrap.min.css')
 block content
-	div
-		h2 #{message}
+	div.container.bg-danger
+		h2.text-primary= message
 			| &nbsp;&nbsp;
 			strong= error.status
 		pre #{error.stack}

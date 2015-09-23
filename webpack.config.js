@@ -29,7 +29,11 @@ module.exports={
 		}),
 		new webpack.ProvidePlugin({
 	    	React: "react",
-		})
+		}),
+		new webpack.ProvidePlugin({
+	    	classnames: "classnames",
+		}),
   	]
 
 }
+
