@@ -6764,6 +6764,30 @@ button.close {
     display: none !important;
   }
 }
+@media screen and (max-width: 767px) {
+  body:after {
+    display: none;
+    content: xs ;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 991px) {
+  body:after {
+    display: none;
+    content: sm ;
+  }
+}
+@media screen and (min-width: 992px) and (max-width: 1199px) {
+  body:after {
+    display: none;
+    content: md ;
+  }
+}
+@media screen and (min-width: 1200px) {
+  body:after {
+    display: none;
+    content: lg ;
+  }
+}
 .page-tail {
   display: block;
   padding-top: 40px;

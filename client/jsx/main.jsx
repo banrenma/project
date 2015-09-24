@@ -15,12 +15,12 @@ class Main extends React.Component{
 	}
 
 	componentDidMount() {
-		routes.on('routes', this.displayName,this.handleChangePath.bind(this));
+		routes.on('routes', this,this.handleChangePath.bind(this));
 	}
 
 	componentWillUnmount() {
 
-		routes.removeListen('routes', this.displayName);
+		routes.removeListen('routes', this);
 	}
 
 

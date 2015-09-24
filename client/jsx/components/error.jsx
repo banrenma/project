@@ -5,7 +5,7 @@ class Error extends React.Component{
 		routes.gotoPath("/")
 	}
 	render(){
-
+		console.log(routes)
 		return (
 			<div className = 'container'>
 				<h2 className='text-danger'>Error Message:</h2>

@@ -46,7 +46,8 @@ gulp.task('buildless', function () {
 
 
 gulp.task('watch',function(){
-	gulp.watch('./client/**/**/*.jsx?',['webpack'])
+	gulp.watch('./client/**/**/*.jsx',['webpack'])
+  gulp.watch('./client/**/**/*.js',['webpack'])
 	gulp.watch('./client/less/**/*.less',['buildless'])
 })
 

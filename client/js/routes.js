@@ -6,6 +6,7 @@ class Routes{
 		this.curPath = document.location.pathname + document.location.search ? document.location.pathname + document.location.search :'';
 		this.event={};
 		this.loginGoBackPath = '/';
+		this.screenSizeType = 'lg';
 		window.history.pushState(null,null, this.curPath)
 	}
 
@@ -46,19 +47,27 @@ class Routes{
 		return url;
 	}
 
-		
+	
+	//判断当前的屏幕大小类型
+	getScreenSizeType(){
+		return this.screenSizeType;
+	}	
+	setScreenSizeType(screenSizeType){
+		this.screenSizeType = screenSizeType;
+		routes.emit('onresize',screenSizeType);
+	}
 
-
-	on(eventName,displayName,handle){
+	//事件处理函数
+	on(eventName,object,handle){
 		if(!this.event[eventName]){
 			this.event[eventName] = {};
 		}
-		this.event[eventName][displayName] = handle;
+		this.event[eventName][object] = handle;
 	}	
 
-	removeListen(eventName,displayName){
+	removeListen(eventName,object){
 		if(this.event[eventName]){
-			delete this.event[eventName][displayName];
+			delete this.event[eventName][object];
 		}
 	}
 
@@ -73,13 +82,6 @@ class Routes{
 }
 
 routes = new Routes;
-
-window.onpopstate = function(event){
-	// alert(document.location.pathname + document.location.search)
-	// console.log(document.location)
-	routes.onpopstate(document.location.pathname + document.location.search)
-}
-
 export default routes;
 
 

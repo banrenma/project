@@ -56,6 +56,8 @@
 
 	var _jsxMainJsx2 = _interopRequireDefault(_jsxMainJsx);
 
+	__webpack_require__(166);
+
 	React.render(React.createElement(_jsxMainJsx2['default'], null), $('#content')[0]);
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1), __webpack_require__(157)))
 
@@ -257,9 +259,7 @@
 	        currentQueue = queue;
 	        queue = [];
 	        while (++queueIndex < len) {
-	            if (currentQueue) {
-	                currentQueue[queueIndex].run();
-	            }
+	            currentQueue[queueIndex].run();
 	        }
 	        queueIndex = -1;
 	        len = queue.length;
@@ -311,6 +311,7 @@
 	    throw new Error('process.binding is not supported');
 	};
 
+	// TODO(shtylman)
 	process.cwd = function () { return '/' };
 	process.chdir = function (dir) {
 	    throw new Error('process.chdir is not supported');
@@ -29704,13 +29705,13 @@
 		}, {
 			key: 'componentDidMount',
 			value: function componentDidMount() {
-				_jsRoutesJs2['default'].on('routes', this.displayName, this.handleChangePath.bind(this));
+				_jsRoutesJs2['default'].on('routes', this, this.handleChangePath.bind(this));
 			}
 		}, {
 			key: 'componentWillUnmount',
 			value: function componentWillUnmount() {
 
-				_jsRoutesJs2['default'].removeListen('routes', this.displayName);
+				_jsRoutesJs2['default'].removeListen('routes', this);
 			}
 
 			// renderUser(){
@@ -29783,6 +29784,7 @@
 			this.curPath = document.location.pathname + document.location.search ? document.location.pathname + document.location.search : '';
 			this.event = {};
 			this.loginGoBackPath = '/';
+			this.screenSizeType = 'lg';
 			window.history.pushState(null, null, this.curPath);
 		}
 
@@ -29829,19 +29831,34 @@
 				console.log(url);
 				return url;
 			}
+
+			//判断当前的屏幕大小类型
+		}, {
+			key: 'getScreenSizeType',
+			value: function getScreenSizeType() {
+				return this.screenSizeType;
+			}
+		}, {
+			key: 'setScreenSizeType',
+			value: function setScreenSizeType(screenSizeType) {
+				this.screenSizeType = screenSizeType;
+				routes.emit('onresize', screenSizeType);
+			}
+
+			//事件处理函数
 		}, {
 			key: 'on',
-			value: function on(eventName, displayName, handle) {
+			value: function on(eventName, object, handle) {
 				if (!this.event[eventName]) {
 					this.event[eventName] = {};
 				}
-				this.event[eventName][displayName] = handle;
+				this.event[eventName][object] = handle;
 			}
 		}, {
 			key: 'removeListen',
-			value: function removeListen(eventName, displayName) {
+			value: function removeListen(eventName, object) {
 				if (this.event[eventName]) {
-					delete this.event[eventName][displayName];
+					delete this.event[eventName][object];
 				}
 			}
 		}, {
@@ -29859,13 +29876,6 @@
 	})();
 
 	routes = new Routes();
-
-	window.onpopstate = function (event) {
-		// alert(document.location.pathname + document.location.search)
-		// console.log(document.location)
-		routes.onpopstate(document.location.pathname + document.location.search);
-	};
-
 	exports['default'] = routes;
 	module.exports = exports['default'];
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(160)))
@@ -31510,6 +31520,10 @@
 
 	var _baseRouteJsx2 = _interopRequireDefault(_baseRouteJsx);
 
+	var _componentsPageHeadJsx = __webpack_require__(165);
+
+	var _componentsPageHeadJsx2 = _interopRequireDefault(_componentsPageHeadJsx);
+
 	var Index = (function (_BaseRoutes) {
 		_inherits(Index, _BaseRoutes);
 
@@ -31517,18 +31531,33 @@
 			_classCallCheck(this, Index);
 
 			_get(Object.getPrototypeOf(Index.prototype), 'constructor', this).apply(this, arguments);
+
+			this.state = {
+				text: 'index'
+			};
 		}
 
 		_createClass(Index, [{
+			key: 'handleOnClick',
+			value: function handleOnClick() {
+				_jsRoutesJs2['default'].gotoPath("/fdfdfd");
+			}
+		}, {
 			key: 'renderIndex',
 			value: function renderIndex() {
 				return React.createElement(
 					'div',
 					null,
+					React.createElement(_componentsPageHeadJsx2['default'], null),
 					React.createElement(
 						'h1',
 						null,
-						'index'
+						this.state.text
+					),
+					React.createElement(
+						'button',
+						{ className: 'btn btn-primary', onClick: this.handleOnClick },
+						'返回主页'
 					)
 				);
 			}
@@ -31642,7 +31671,7 @@
 		}, {
 			key: 'render',
 			value: function render() {
-
+				console.log(_jsRoutesJs2['default']);
 				return React.createElement(
 					'div',
 					{ className: 'container' },
@@ -31671,6 +31700,140 @@
 	exports['default'] = Error;
 	module.exports = exports['default'];
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
+
+/***/ },
+/* 165 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function(React) {'use strict';
+
+	Object.defineProperty(exports, '__esModule', {
+		value: true
+	});
+
+	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+
+	var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; desc = parent = getter = undefined; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; continue _function; } } else if ('value' in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var _jsRoutesJs = __webpack_require__(159);
+
+	var _jsRoutesJs2 = _interopRequireDefault(_jsRoutesJs);
+
+	var PageHead = (function (_React$Component) {
+		_inherits(PageHead, _React$Component);
+
+		function PageHead() {
+			_classCallCheck(this, PageHead);
+
+			_get(Object.getPrototypeOf(PageHead.prototype), 'constructor', this).apply(this, arguments);
+
+			this.state = {
+				sizeType: _jsRoutesJs2['default'].getScreenSizeType()
+			};
+		}
+
+		_createClass(PageHead, [{
+			key: 'componentDidMount',
+			value: function componentDidMount() {
+				_jsRoutesJs2['default'].on('onresize', this, this.handleOnResize.bind(this));
+			}
+		}, {
+			key: 'componentWillUnmount',
+			value: function componentWillUnmount() {
+
+				_jsRoutesJs2['default'].removeListen('onresize', this);
+			}
+		}, {
+			key: 'handleOnResize',
+			value: function handleOnResize(sizeType) {
+				this.setState({ sizeType: sizeType });
+			}
+		}, {
+			key: 'render_xs',
+			value: function render_xs() {
+				return React.createElement(
+					'div',
+					null,
+					React.createElement(
+						'h2',
+						null,
+						'xssssss'
+					)
+				);
+			}
+		}, {
+			key: 'render',
+			value: function render() {
+				if (this.state.sizeType === 'xs') {
+					return this.render_xs();
+				}
+				return React.createElement(
+					'nav',
+					{ className: 'navbar navbar-default' },
+					React.createElement(
+						'div',
+						{ className: 'container-fluid' },
+						React.createElement('div', { className: 'navbar-header' })
+					)
+				);
+			}
+		}]);
+
+		return PageHead;
+	})(React.Component);
+
+	exports['default'] = PageHead;
+	module.exports = exports['default'];
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
+
+/***/ },
+/* 166 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+
+	var _routesJs = __webpack_require__(159);
+
+	var _routesJs2 = _interopRequireDefault(_routesJs);
+
+	window.onpopstate = function (event) {
+		// alert(document.location.pathname + document.location.search)
+		// console.log(document.location)
+		_routesJs2["default"].onpopstate(document.location.pathname + document.location.search);
+	};
+
+	//监听窗口大小改变 
+	function getScreenSizeType() {
+
+		var screenSizeType;
+		if (window.getComputedStyle) {
+			screenSizeType = window.getComputedStyle(document.body, ":after").getPropertyValue("content");
+		}
+
+		if (!screenSizeType) {
+			if (window.innerWidth < 768) {
+				screenSizeType = 'xs';
+			} else if (window.innerWidth < 992) {
+				screenSizeType = 'sm';
+			} else if (window.innerWidth < 1200) {
+				screenSizeType = 'md';
+			} else {
+				screenSizeType = 'lg';
+			}
+		}
+		_routesJs2["default"].setScreenSizeType(screenSizeType);
+	}
+
+	window.onresize = getScreenSizeType;
+	getScreenSizeType();
 
 /***/ }
 /******/ ]);
